@@ -1,0 +1,10 @@
+{
+    "version": 0,
+
+    "tools": {
+        "assist": {
+            "label": "Remote Support",
+            "path": "index.html"
+        }
+    }
+}

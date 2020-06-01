@@ -1,7 +1,7 @@
 # assist-cockpit
 Remote support module
 
-Requires <strong>x11vnc</strong> installed on the client.
+Requires <strong>x11vnc</strong> installed and <strong>lightdm</strong> running on the client.
 
 ```console
 #Automatic install

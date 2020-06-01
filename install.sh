@@ -12,6 +12,6 @@ fi
 mkdir -p /usr/share/cockpit/assist
 cd /usr/share/cockpit/assist/
 for i in index.html manifest.json network.css.gz assist.js; do
-	wget -c https://raw.githubusercontent.com/cyberorg/assist-cockpit/master/assist/$i
+	curl https://raw.githubusercontent.com/cyberorg/assist-cockpit/master/assist/$i > $i
 done
 echo -e "${GREEN} Cockpit Assist plugin installed"

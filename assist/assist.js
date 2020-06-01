@@ -6,16 +6,19 @@ const asapply = document.getElementById("asapply");
 const asdiscon = document.getElementById("asdiscon");
 
 function asdiscon_run() {
-    cockpit.spawn(["pkill", "-USR1", "x11vnc"]);
+    cockpit.spawn(["pkill", "-USR1", "x11vnc"], {
+        superuser: true
+    });
 }
 
 function assist_run() {
-    document.getElementById("asapply").value = "Please wait";
-    cockpit.spawn(["x11vnc", "-auth", "/var/run/lightdm/root/:0", "-q", "-nopw", "-connect_or_exit", AS_SERVER.value + ":" + AS_PORT.value])
+    cockpit.spawn(["nohup", "x11vnc", "-auth", "/var/run/lightdm/root/:0", "-q", "-nopw", "-connect_or_exit", AS_SERVER.value + ":" + AS_PORT.value], {
+            superuser: true
+        })
         .stream(assist_output)
         .then(assist_success)
         .catch(assist_fail);
-
+    document.getElementById("asapply").value = "Connected";
     result.innerHTML = "";
     output.innerHTML = "";
 }

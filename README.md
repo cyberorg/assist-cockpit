@@ -1,6 +1,8 @@
 # assist-cockpit
 Remote support module
 
+Requires <strong>x11vnc</strong> installed on the client.
+
 ```console
 #Automatic install
 wget -O - https://raw.githubusercontent.com/cyberorg/assist-cockpit/master/install.sh | sudo bash

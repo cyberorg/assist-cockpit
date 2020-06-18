@@ -11,4 +11,4 @@ wget -O - https://raw.githubusercontent.com/cyberorg/assist-cockpit/master/insta
 cp -r assist /usr/share/cockpit/
 ```
 
-Run `vncviewer -listen` on the server in a desktop session for client to connect, server needs IP or FQDN reachable by the clients.
+Run `vncviewer -listen` in a desktop session for GUI or `socat tcp-listen:5500,keepalive=1 stdio,raw,echo=0` on the server for a client to connect, server needs IP or FQDN reachable by the clients.

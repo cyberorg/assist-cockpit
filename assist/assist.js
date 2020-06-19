@@ -28,7 +28,7 @@ function asdiscon_run() {
 }
 
 function assist_run_gui() {
-    cockpit.spawn(["nohup", "x11vnc", "-auth", "/var/run/lightdm/root/:0", "-q", "-nopw", "-connect_or_exit", AS_SERVER.value + ":" + AS_PORT.value], {
+    cockpit.spawn(["nohup", "x11vnc", "-speeds", "modem", "-auth", "/var/run/lightdm/root/:0", "-q", "-nopw", "-connect_or_exit", AS_SERVER.value + ":" + AS_PORT.value], {
             superuser: true
         })
         .stream(assist_output)
